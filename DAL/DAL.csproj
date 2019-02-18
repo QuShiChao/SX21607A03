@@ -32,10 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\..\..\..\辅助工具\EntityFramework.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\辅助工具\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\..\..\辅助工具\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\辅助工具\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

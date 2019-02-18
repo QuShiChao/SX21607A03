@@ -143,5 +143,29 @@ namespace LX_OrderingServer.Controllers
         {
             return LogisticsBll.Upd(logistics);
         }
+        //添加订单
+        [HttpPost]
+        public int AddOrder(OrderInfo order)
+        {
+            return OrderBll.Add(order);
+        }
+        //查询订单
+        [HttpGet]
+        public List<OrderInfo> GetOrder()
+        {
+            return OrderBll.Get();
+        }
+        //订单删除
+        [HttpDelete]
+        public int DelOrder(int id)
+        {
+            return OrderBll.Del(id);
+        }
+        //订单修改
+        [HttpPut]
+        public int UpdOrder(OrderInfo order)
+        {
+            return OrderBll.Upd(order);
+        }
     }
 }
