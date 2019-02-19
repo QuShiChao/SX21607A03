@@ -12,9 +12,11 @@ namespace DAL
     public class EvaluateDal : Opetate<EvaluateInfo>
     {
         OrderDbContext db = new OrderDbContext();
+        //dbContext.Configuration.ValidateOnSaveEnabled = false
         //评价
         public int Add(EvaluateInfo t)
         {
+            
             db.Evaluate.Add(t);
             return db.SaveChanges();
         }

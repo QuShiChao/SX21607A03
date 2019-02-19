@@ -20,7 +20,7 @@ namespace DAL
         //获取用户信息
         public static List<ClientInfo> Get()
         {
-            return db.Client.Include("P").Include("C").Include("A").ToList();
+            return db.Client.Include("P").ToList();
         }
         //删除
         public static int Del(int id)

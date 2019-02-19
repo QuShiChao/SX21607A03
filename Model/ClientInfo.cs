@@ -23,15 +23,15 @@ namespace Model
         //省份Id
         [ForeignKey("P")]
         public int Pid { get; set; }
-        public virtual AddressInfo P { get; set; }
+        //public virtual AddressInfo P { get; set; }
         //市级Id
-        [ForeignKey("C")]
+        //[ForeignKey("P")]
         public int Cid { get; set; }
-        public virtual AddressInfo C { get; set; }
+        //public virtual AddressInfo C { get; set; }
         //县级Id
-        [ForeignKey("A")]
+        //[ForeignKey("P")]
         public int Aid { get; set; }
-        public virtual AddressInfo A { get; set; }
+        public virtual AddressInfo P { get; set; }
         //详细地址
         public string Addr { get; set; }
         //头像
