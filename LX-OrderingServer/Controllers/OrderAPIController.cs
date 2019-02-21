@@ -42,7 +42,7 @@ namespace LX_OrderingServer.Controllers
             return DishBll.Add(dish);
         }
         //菜肴查看
-        [HttpPut]
+        [HttpGet]
         public List<DishInfo> GetDish()
         {
             return DishBll.Get();

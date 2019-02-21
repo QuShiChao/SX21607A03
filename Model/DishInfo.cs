@@ -25,7 +25,7 @@ namespace Model
         public string Image { get; set; }
         //菜色介绍
         public string Intro { get; set; }
-        //菜色状态：0有，1无，2，特色菜
+        //菜色状态：0有，1无，2特色菜,3下架
         public int Status { get; set; }
         //订购次数
         public int OrderNums { get; set; }

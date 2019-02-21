@@ -12,12 +12,14 @@ namespace DAL
     //菜系操作
     public class CatageryDal:Opetate<Catagery>
     {
-        OrderDbContext db = new OrderDbContext();
         //菜系添加
         public int Add(Catagery catagery)
         {
-            db.Catagery.Add(catagery);
-            return db.SaveChanges();
+            using (OrderDbContext db = new OrderDbContext())
+            {
+                db.Catagery.Add(catagery);
+                return db.SaveChanges();
+            }
         }
         //菜系删除
         public int Del(int id)
@@ -27,13 +29,19 @@ namespace DAL
         //菜系查看
         public List<Catagery> Get()
         {
-            return db.Catagery.ToList();
+            using (OrderDbContext db = new OrderDbContext())
+            {
+                return db.Catagery.ToList();
+            }
         }
         //菜系修改
         public int Upd(Catagery catagery)
         {
-            db.Entry(catagery).State = EntityState.Modified;
-            return db.SaveChanges();
+            using (OrderDbContext db = new OrderDbContext())
+            {
+                db.Entry(catagery).State = EntityState.Modified;
+                return db.SaveChanges();
+            }
         }
     }
 }

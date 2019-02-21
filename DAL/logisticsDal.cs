@@ -10,12 +10,14 @@ namespace DAL
 {
     public class logisticsDal : Opetate<logistics>
     {
-        OrderDbContext db = new OrderDbContext();
         //物流信息添加
         public int Add(logistics t)
         {
-            db.Logistics.Add(t);
-            return db.SaveChanges();
+            using (OrderDbContext db = new OrderDbContext())
+            {
+                db.Logistics.Add(t);
+                return db.SaveChanges();
+            }
         }
         //物流信息删除
         public int Del(int id)
@@ -25,13 +27,19 @@ namespace DAL
         //物流信息查看
         public List<logistics> Get()
         {
-            return db.Logistics.Include("Order").ToList();
+            using (OrderDbContext db = new OrderDbContext())
+            {
+                return db.Logistics.Include("Order").ToList();
+            }
         }
-
+        //物流信息修改
         public int Upd(logistics t)
         {
-            db.Entry(t).State = System.Data.Entity.EntityState.Modified;
-            return db.SaveChanges();
+            using (OrderDbContext db = new OrderDbContext())
+            {
+                db.Entry(t).State = System.Data.Entity.EntityState.Modified;
+                return db.SaveChanges();
+            }
         }
     }
 }

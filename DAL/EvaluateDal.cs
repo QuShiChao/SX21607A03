@@ -16,7 +16,6 @@ namespace DAL
         //评价
         public int Add(EvaluateInfo t)
         {
-            
             db.Evaluate.Add(t);
             return db.SaveChanges();
         }

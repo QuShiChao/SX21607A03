@@ -36,5 +36,9 @@ namespace Model
         public string Addr { get; set; }
         //头像
         public string HeadImage { get; set; }
+        //支付密码
+        public string PayPwd{ get; set; }
+        //账户余额
+        public decimal Balance { get; set; }
     }
 }
